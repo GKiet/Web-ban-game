@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<!-- Begin Brand -->
+@Html.Action("MenuProductCategory", "Menu")
+<!-- End Brand -->
+<!-- Begin Game -->
+<div id="allgames" style="background-color: #050e2d;">
+    <h2>Danh sách sản phẩm</h2>
+    @Html.Action("ListGame", "Menu")
+
+</div>

@@ -1,0 +1,19 @@
+﻿@model IEnumerable<DoAnCoSo.Models.EF.ProductCategory>
+
+@if (Model != null && Model.Any())
+{
+    <ul class="listgame">
+        <li class="sub-list  listlink active" data-filter="all">All</li>
+        <li class="sub-list listlink" data-filter="fps">FPS</li>
+        <li class="sub-list listlink" data-filter="rpg">RPG</li>
+        <li class="sub-list listlink" data-filter="openworld">Open World</li>
+        <li class="sub-list listlink" data-filter="fighting">Fighting</li>
+        <li class="sub-list listlink" data-filter="all">PLAYSTATION</li>
+        <li class="sub-list listlink" data-filter="all">XBOX</li>
+        <li class="sub-list listlink" data-filter="all">NINTENDO SWITCH</li>
+
+    </ul>
+    <div class="boxgame">
+       @Html.Action("Partial_ItemsByCateId", "Products")
+    </div>
+}

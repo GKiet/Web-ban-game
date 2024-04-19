@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Seaside Game</title>
+    <link rel="stylesheet" href="~/Content/assets/css/style.css">
+    <link rel="stylesheet" href="~/Content/assets/css/font/fontawesome-free-6.2.0-web/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    @*@Styles.Render("~/Content/css")*@
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div id="main-header">
+        <div id="header">
+            <div class="header-logo">
+                <i class="fa-solid fa-gamepad"></i>
+                <p>The Seaside Game</p>
+            </div>
+            @Html.Action("MenuTop", "Menu")
+            <div class="sub-header" style="margin-top:80px">
+                <a href="/gio-hang" class="cart-header" style="margin-top:80px">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+                <div class="account" style="color:white">
+                    @if (!Request.IsAuthenticated)
+                    {
+                    <a href="#" style="color: white; text-decoration: none">
+                        My Account
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="account_selection">
+                        <li style="list-style-type: none;" ><a href="/account/login" style="color: white; text-decoration: none"><i class="fa fa-sign-in" aria-hidden="true" style="margin-right: 5px"></i>Sign In</a></li>
+                        <li style="list-style-type: none;"><a href="/account/Register" style="color: white; text-decoration: none"><i class="fa fa-user-plus" aria-hidden="true" style="margin-right: 5px"></i>Register</a></li>
+                    </ul>
+                    }
+                    else
+                    {
+                    <a href="#" style="color: white; text-decoration: none">
+                        Welcome @User.Identity.Name
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="account_selection">
+                        <li style="list-style-type: none;"><a href="javascript:document.getElementById('logOffForm').submit()" style="color: white; text-decoration: none"><i class="fa fa-user-plus" aria-hidden="true" style="margin-right: 5px"></i>Logout</a></li>
+                    </ul>
+                    }
+                    @if (Request.IsAuthenticated)
+                    {
+                    <div style="display:none">
+                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { @id = "logOffForm" }))
+                        {
+                        @Html.AntiForgeryToken()
+                        }
+                    </div>
+                    }
+                </div>
+
+
+
+            </div>
+        </div>
+        <!-- content header -->
+        <div id="content-header">
+            <div class="nav-content">
+                <h1>The Seaside Game</h1>
+                <p>Just the place you need!</p>
+                <p>Take a look around!</p>
+                <a href="">
+                    <button type="button" class="btn-2" style="font-family: 'Poppins', sans-serif;"><i class="fa-solid fa-angles-right"></i>Buy Now</button>
+                </a>
+            </div>
+            <div class="contentbg">
+                <div class="content-img">
+                    <img src="Content/assets/css/img/ff7remake.png" alt="" class="img-ani">
+                    <img src="Content/assets/css/img/zelda.png" alt="" class="img-ani">
+                    <img src="Content/assets/css/img/minecraft.png" alt="" class="img-ani">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Header -->
+    @RenderBody()
+   
+    
+    <!-- Begin Footer -->
+    <div id="footer">
+        <div class="sub-footer">
+            <a href="#main-header" class="logo-footer">
+                <img src="Content/assets/css/img/TSG.png" alt="">
+            </a>
+            <p><i class="fa-regular fa-copyright"></i>2023 All Rights Reserved</p>
+            <ul class="list-footer">
+                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-discord"></i></a></li>
+            </ul>
+        </div>
+    </div>
+
+    @*@Scripts.Render("~/bundles/jquery")*@
+    <script src="~/Content/assets/js/app.js"></script>
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    @RenderSection("scripts", required: false)
+</body>
+</html>

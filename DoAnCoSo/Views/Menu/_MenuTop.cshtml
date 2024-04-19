@@ -1,0 +1,17 @@
+﻿@model IEnumerable<DoAnCoSo.Models.EF.Category>
+@if (Model != null && Model.Any())
+{
+    <ul class="navbar">
+        @foreach (var item in Model)
+        {
+            <li><a href="@item.Alias">@item.Title</a></li>
+        }
+
+        @*<li><a href="#main-header">HOME</a></li>
+        <li><a href="#allgames">PLAYSTATION</a></li>
+        <li><a href="#allgames">XBOX</a></li>
+        <li><a href="#allgames">NINTENDO</a></li>
+        <li><a href="#allgames">GAMES</a></li>*@
+
+    </ul>
+}

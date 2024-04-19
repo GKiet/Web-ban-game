@@ -1,0 +1,499 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* scroll bar */
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+/* begin header */
+
+#main-header{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(img/bg.jpg) center no-repeat;
+    background-size: cover;
+}
+
+#header{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 9999;
+}
+
+.header-logo{
+    width: 300px;
+    height: 10vh;
+    background-color: #550381;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    clip-path: polygon(0 0, 100% 0, 65% 100%, 0 100%);
+    padding: 10px;
+    line-height: 1.3rem; /*20.8px*/
+}
+
+.header-logo .fa-solid{
+    font-size: 50px;
+}
+
+.header-logo p{
+    width: 130px;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.navbar{
+    display: flex;
+    list-style-type: none;
+}
+
+.navbar li{
+    padding: 0 50px;
+}
+
+.navbar li a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.cart-header .fa-cart-shopping{
+    color: #fff; 
+    font-size: 20px
+}
+
+.navbar li a:hover,
+.cart-header .fa-cart-shopping:hover{
+    color: #fec53a;
+}
+
+
+
+#header .btn{
+    width: 250px;
+    height: 10vh;
+    background-color: #fec53a;
+    color: #000;
+    outline: none;
+    border: none;
+    clip-path: polygon(35% 0, 100% 0, 100% 100%, 0% 100%);
+    font-weight: bold;
+    font-size: 1.2rem; /*19x2px*/
+    text-align: right;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+.btn .fa-trophy{
+    padding-right: 3px;
+}
+
+/* end header */
+
+/* content header */
+#content-header{
+    width: 80%;
+    min-height: 90vh;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+.nav-content h1{
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.nav-content p{
+    width: 550px;
+    font-size: 1.3rem;
+    line-height: 32px;
+    margin-bottom: 10px;
+}
+
+.nav-content .btn-2{
+    width: 350px;
+    height: 10vh;
+    padding-left: 20px;
+    outline: none;
+    border: none;
+    background-color: #fec53a;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 15px;
+    clip-path: polygon(0 0, 75% 0, 100% 100%, 0% 100%);
+    border-radius: 20px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.contentbg{
+    width: 450px;
+    height: 550px;
+    position: relative;
+    overflow: hidden;
+}
+
+.content-img{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.content-img img{
+    width: 100%;
+    height: 100%;
+}
+
+/* end content header */
+
+/* begin brand */
+#brand{
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(circle, rgb(41, 40, 46) , rgb(26, 25, 31));
+}
+
+.sub-brand{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 30px 0;
+    align-items: center
+}
+
+.sub-brand img{
+    width: 200px;
+    height: 200px;
+    margin: 0 100px;
+}
+/* end brand */
+
+
+/* begin game */
+#allgames,
+#playstation_console,
+#xbox_console,
+#ninten_console{
+    padding: 100px;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#allgames h2,
+#playstation_console h2,
+#xbox_console h2,
+#ninten_console h2{
+    color: #fff;
+    margin: 10px 0;
+}
+
+#allgames .listgame{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+#allgames .sub-list{
+    list-style-type: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    color: #fff;
+}
+
+#allgames .sub-list.active{
+    background-color: #1aeeef;
+    box-shadow: 0 0 10px #1aeeef;
+    color: #050e2d;
+}
+
+.boxgame,
+.boxconsole{
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxgame .sub-box{
+    background-color: #1b2141;
+}
+
+.playstation{
+    background-color: #004181;
+}
+
+.xbox{
+    background-color: #0d540d;
+}
+
+.nintendo{
+    background-color: #890f0f;
+}
+
+.fa-playstation,
+.fa-xbox,
+.fa-dice-d6{
+    font-size: 35px;
+    margin-left: 3px;
+}
+
+.boxgame .sub-box,
+.boxconsole .sub-console{
+    width: 280px;
+    border-radius: 10px;
+    margin: 20px 40px;
+    overflow: hidden;
+}
+
+.boxgame .sub-box img,
+.boxconsole .sub-console img{
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.sub-box .box-content,
+.sub-console .content-console{
+    padding: 10px;
+}
+
+.sub-box .box-content h4,
+.sub-console .content-console h4{
+    color: #fff;
+    margin: 15px 0;
+}
+
+.box-content .box-line{
+    background-color: #35407e;
+}
+
+.span-ps{
+    background-color: #5580ab;
+}
+
+.span-xbox{
+    background-color: #659965;
+}
+
+.span-nintendo{
+    background-color: #c36868;
+}
+
+.box-content .box-line,
+.content-console .box-line{
+    position: relative;
+    height: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+
+.box-content .box-line span,
+.ps-line span{
+    background-color: #1aeeef;
+    box-shadow: 0 0 10px #1aeeef;
+}
+
+.xbox-line span{
+    background-color: #1aef6b;
+    box-shadow: 0 0 10px #1aef6b;
+}
+
+.nintendo-line span{
+    background-color: #ff4040;
+    box-shadow: 0 0 10px #ff4040;
+}
+
+.box-content .box-line span,
+.content-console .box-line span{
+    position: absolute;
+    height: 100%;
+    width: 80%;
+    border-radius: 10px;
+    transform-origin: left;
+    transform: scaleX(0);
+    animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+
+@keyframes animate{
+    100%{
+        transform: scaleX(1);
+    }
+}
+
+.box-content .box-info,
+.content-console .box-info{
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box-content .box-info{
+    border-top: 2px solid #35407e;
+}
+
+.ps-info{
+    border-top: 2px solid #5580ab;
+}
+
+.xbox-info{
+    border-top: 2px solid #659965;
+}
+
+.nintendo-info{
+    border-top: 2px solid #c36868;
+}
+
+.box-content .box-info p,
+.content-console .box-info p{
+    color: #fff;
+}
+
+.box-info p span{
+    color: #1aeeef;
+}
+
+.xbox-info p span{
+    color: #1aef6b;
+}
+
+.nintendo-info p span{
+    color: #ff4040;
+}
+
+.box-info a,
+.xbox-info a{
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 20px 0;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.box-info a{
+    border: 1px solid #1aeeef;
+}
+
+.xbox-info a{
+    border: 1px solid #1aef6b;
+}
+
+.nintendo-info a{
+    border: 1px solid #ff4040;
+}
+
+.box-info a:hover{
+    background-color: #1aeeef;
+    color: #050e2d;
+    box-shadow: 0 0 10px #1aeeef;
+}
+
+.xbox-info a:hover{
+    background-color: #1aef6b;
+    color: #050e2d;
+    box-shadow: 0 0 10px #1aef6b;
+}
+
+.nintendo-info a:hover{
+    background-color: #ff4040;
+    color: #050e2d;
+    box-shadow: 0 0 10px #ff4040;
+}
+
+.boxgame .sub-box.hide{
+    display: none;
+}
+/* end game */
+
+/* begin footer */
+#footer{
+    padding: 10px 100px 0;
+    background-color: #050e2d;
+}
+
+#footer .sub-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#footer .sub-footer .logo-footer{
+    position: relative;
+}
+
+.sub-footer .logo-footer img{
+    width: 200px;
+}
+
+.sub-footer p{
+    color: #fff;
+}
+
+.sub-footer .list-footer{
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub-footer .list-footer li{
+    list-style-type: none;
+    display: flex;
+    width: 45px;
+    height: 45px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid #1aeeef;
+    margin: 0 5px;
+}
+
+.list-footer li a{
+    color: #fff;
+    font-size: 25px;
+}
+
+.sub-footer .list-footer li:hover{
+    background-color: #1aeeef;
+    border: none;
+    box-shadow: 0 0 10px #1aeeef;
+}
+
+.sub-footer .list-footer li:hover a{
+    color: #050e2d;
+}
+/* end footer */

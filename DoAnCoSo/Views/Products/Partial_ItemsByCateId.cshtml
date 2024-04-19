@@ -1,0 +1,24 @@
+﻿@model IEnumerable<DoAnCoSo.Models.EF.Product>
+@if (Model != null && Model.Any())
+{
+    foreach (var item in Model)
+    {
+        var strImge = "";
+        var img = item.ProductImage.FirstOrDefault(x => x.IsDefault);
+        if(img != null)
+        {
+            strImge = img.Image;
+        }
+        <div class="sub-box sublink" data-item="@item.ProductCategory.Alias">
+            <img src="@strImge" alt="@item.Title">
+            <div class="box-content">
+                <h4>@item.Title</h4>
+                <div class="box-line"><span></span></div>
+                <div class="box-info">
+                    <p>Pricing<br><span>@item.Price</span></p>
+                    <a href="#" class="add-to-cart" data-id="@item.Id">add to cart</a>
+                </div>
+            </div>
+        </div>
+    }
+}
